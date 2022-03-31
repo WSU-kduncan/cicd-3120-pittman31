@@ -12,7 +12,6 @@ In this project I will be completing the following tasks:
 - Run Project Locally
   - how you installed docker + dependencies (WSL2, for example)
     1. I am installing docker on an ubuntu aws instance.
-    2. Steps 2-6 are to set up the repository
     3. I ran the following command
         > sudo apt-get update  
     4. I ran the following command
@@ -27,7 +26,6 @@ In this project I will be completing the following tasks:
   "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
   $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
     lsb-release
-    7. Steps 8- are to install the docker engine.
     8. I ran the following command
         > sudo apt-get update
     9. I ran the following command
