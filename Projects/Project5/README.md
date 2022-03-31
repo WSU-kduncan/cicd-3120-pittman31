@@ -6,9 +6,6 @@ In this project I will be completing the following tasks:
 - Explore usage of webhooks to keep production up to date
 
 ## Part 1 - Dockerize it
-
-### Tasks
-
 - Create new GitHub repo (link to create located in Pilot in Content -> Project 5)
 - In a folder named `website`, add the contents of your website
   - this can be a site you created in another class, pet project of yours, or just a vanilla html file
