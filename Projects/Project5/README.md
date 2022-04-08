@@ -45,4 +45,16 @@ In this project I will be completing the following tasks:
         >  docker run -d --name ApacheServer -p 80:80 apache-server:4.0
   - how to view the project (open a browser...go to ip and port...)
     - I viewed the project by entering my public ip for the instance in the web browser
-        > 44.196.112.55:80
+        > 44.196.112.55:80  
+
+## Part 2 - GitHub Actions and DockerHub
+
+### Documentation  
+- Create DockerHub public repo
+  - process to create
+- Allow DockerHub authentication via CLI using Dockhub credentials
+- Configure GitHub Secrets
+  - what credentials are needed - DockerHub credentials (do not state your credentials)
+  - set secrets and secret names
+- Configure GitHub Workflow
+  - variables to change (repository, etc.)
