@@ -51,10 +51,30 @@ In this project I will be completing the following tasks:
 
 ### Documentation  
 - Create DockerHub public repo
-  - process to create
-- Allow DockerHub authentication via CLI using Dockhub credentials
+  - process to create  
+    1. Login to Docker Hub
+    2. Click on repositories along the top banner
+    3. Click the Create Repository Button
+    4. Enter a name for the repository
+    5. Verify that public is selected and click create
+- Allow DockerHub authentication via CLI using Dockhub credentials  
+  1. I entered the following command in the cli
+    > docker login -u DOCKER_USERNAME
+  2. I entered my password when prompted
 - Configure GitHub Secrets
   - what credentials are needed - DockerHub credentials (do not state your credentials)
+    - Docker Username and Password are needed
   - set secrets and secret names
+    1. Cicked on the settings button for https://github.com/WSU-kduncan/cicd-3120-pittman31
+    2. Selected Environments from the side bar
+    3. Clicked on New Environment Button
+    4. Named the environment and clicked configure environment
+    5. Under the Envronment Secrets section click Add Secret
+    6. Enter Information for Username secret
+    7. Repeat steps 5 -6 for Password secret
 - Configure GitHub Workflow
   - variables to change (repository, etc.)
+    1. I clicked add file on https://github.com/WSU-kduncan/cicd-3120-pittman31 repository and created .github/workflow/github-actions-project5.yml
+    2. I copied the contents of the template on https://docs.github.com/en/actions/guides/publishing-docker-images#publishing-images-to-docker-hub into the github-actions-project5.yml file
+    3. I changed images: my-docker-hub-namespace/my-docker-hub-repository to:
+        > images: pittman31/ceg3120_project5
