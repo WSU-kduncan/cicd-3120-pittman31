@@ -67,14 +67,16 @@ In this project I will be completing the following tasks:
   - set secrets and secret names
     1. Cicked on the settings button for https://github.com/WSU-kduncan/cicd-3120-pittman31
     2. Selected Environments from the side bar
-    3. Clicked on New Environment Button
-    4. Named the environment and clicked configure environment
-    5. Under the Envronment Secrets section click Add Secret
+    3. Clicked on New Respository Secret
     6. Enter Information for Username secret
-    7. Repeat steps 5 -6 for Password secret
+    7. Repeat steps 3-4 for Password secret
 - Configure GitHub Workflow
   - variables to change (repository, etc.)
     1. I clicked add file on https://github.com/WSU-kduncan/cicd-3120-pittman31 repository and created .github/workflow/github-actions-project5.yml
     2. I copied the contents of the template on https://docs.github.com/en/actions/guides/publishing-docker-images#publishing-images-to-docker-hub into the github-actions-project5.yml file
     3. I changed images: my-docker-hub-namespace/my-docker-hub-repository to:
         > images: pittman31/ceg3120_project5
+    4. I changed tags: ${{ steps.meta.outputs.tags }} to:
+        >tags: pittman31/ceg3120_project5:1.0
+    5. I created a new release on github tagged as 1.0
+     I 
