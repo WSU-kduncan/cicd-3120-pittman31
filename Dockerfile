@@ -1,5 +1,9 @@
 FROM httpd:2.4
 
-COPY . /usr/local/apache2/htdocs/
+WORKDIR /home/ubuntu/cicd-3120-pittman31/website
+
+RUN pwd
+
+COPY * /usr/local/apache2/htdocs/
 
 EXPOSE 80
