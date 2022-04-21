@@ -79,4 +79,42 @@ In this project I will be completing the following tasks:
     4. I changed tags: ${{ steps.meta.outputs.tags }} to:
         >tags: pittman31/ceg3120_project5:1.0
     5. I created a new release on github tagged as 1.0
-     I 
+    
+## Part 3 - Deployment
+
+### Documentation
+- Container restart script
+  - what it does
+    1. Stops the container if it is currently running
+    2. Removes all unused containers from the system
+    3. Pulls  pittman31/ceg3120_project5:latest
+    4. runs pittman31/ceg3120_project5:latest
+- Webhook task definition file
+  - what it does
+    - this defines what happens uppon the webhook triger and how to trigger that webhook.
+    - I changed the following line from the default json file from this resource https://blog.devgenius.io/build-your-first-ci-cd-pipeline-using-docker-github-actions-and-webhooks-while-creating-your-own-da783110e151
+      > "id": "project5",  
+      > "execute-command": "./pull-restart.sh",  
+      > "command-working-directory": "/home/ubuntu/cicd-3120-pittman31",  
+      > "response-message": "Executing redeploy ApacherServer container",  
+      > "match":
+      > {  
+          &nbsp;&nbsp;&nbsp;&nbsp;"type": "value",  
+          &nbsp;&nbsp;&nbsp;&nbsp;"value": "llama",  
+          &nbsp;&nbsp;&nbsp;&nbsp;"parameter":  
+          &nbsp;&nbsp;&nbsp;&nbsp;{  
+            &nbsp;&nbsp;&nbsp;&nbsp;"source": "url",  
+            &nbsp;&nbsp;&nbsp;&nbsp;"name": "GET-PARAM"  
+          &nbsp;&nbsp;&nbsp;&nbsp;}  
+        &nbsp;&nbsp;&nbsp;&nbsp;}   
+- Setting up a webhook on the server
+  - How you created you own listener
+    - I created my own listener with the following command
+      > /home/ubuntu/go/bin/webhook -hooks /home/ubuntu/cicd-3120-pittman31/webhook-config.json -verbose
+  - How you installed and are running the [webhook on GitHub](https://github.com/adnanh/webhook)
+    - I ran the commands below
+      >  sudo snap install --classic go  
+      >  go install github.com/adnanh/webhook@latest
+- Setting up a notifier in GitHub or DockerHub
+  - I created a webhook under the webhooks tab on DockerHub with the following url
+    > http://44.196.112.55:9000/hooks/project5?GET-PARAM=llama
