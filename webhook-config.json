@@ -1,0 +1,21 @@
+[
+    { 
+      "id": "project5",
+      "execute-command": "./pull-restart.sh",
+      "command-working-directory": "/home/ubuntu/cicd-3120-pittman31",
+      "response-message": "Executing redeploy ApacherServer container",
+      "trigger-rule":
+      {
+        "match":
+        {
+          "type": "value",
+          "value": "llama",
+          "parameter":
+          {
+            "source": "url",
+            "name": "GET-PARAM"
+          }
+        }
+      }
+    }
+]
