@@ -36,7 +36,8 @@ In this project I will be completing the following tasks:
   - how to build the container
     - I created a docker file with the following text
         > FROM httpd:2.4  
-        >COPY website /usr/local/apache2/htdocs/  
+        > WORKDIR /home/ubuntu/cicd-3120-pittman31/website  
+        >COPY * /usr/local/apache2/htdocs/  
         >EXPOSE 80
     - I ran the following command to build the container
         > docker build -t apache-server:4.0 /home/ubuntu/cicd-3120-pittman31/Projects/Project5
@@ -60,10 +61,10 @@ In this project I will be completing the following tasks:
 - Allow DockerHub authentication via CLI using Dockhub credentials  
   1. I entered the following command in the cli
     > docker login -u DOCKER_USERNAME
-  2. I entered my password when prompted
+  2. I entered a docker authentication token when prompted
 - Configure GitHub Secrets
   - what credentials are needed - DockerHub credentials (do not state your credentials)
-    - Docker Username and Password are needed
+    - Docker Username and authentication token are needed
   - set secrets and secret names
     1. Cicked on the settings button for https://github.com/WSU-kduncan/cicd-3120-pittman31
     2. Selected Environments from the side bar
@@ -76,8 +77,6 @@ In this project I will be completing the following tasks:
     2. I copied the contents of the template on https://docs.github.com/en/actions/guides/publishing-docker-images#publishing-images-to-docker-hub into the github-actions-project5.yml file
     3. I changed images: my-docker-hub-namespace/my-docker-hub-repository to:
         > images: pittman31/ceg3120_project5
-    4. I changed tags: ${{ steps.meta.outputs.tags }} to:
-        >tags: pittman31/ceg3120_project5:1.0
     5. I created a new release on github tagged as 1.0
     
 ## Part 3 - Deployment
@@ -117,4 +116,10 @@ In this project I will be completing the following tasks:
       >  go install github.com/adnanh/webhook@latest
 - Setting up a notifier in GitHub or DockerHub
   - I created a webhook under the webhooks tab on DockerHub with the following url
-    > http://44.196.112.55:9000/hooks/project5?GET-PARAM=llama
+    > http://44.196.112.55:9000/hooks/project5?GET-PARAM=llama  
+
+## Part 4 - Diagramming
+
+Include a diagram (or diagrams) of your entire workflow. Meaning it should start with a project change / update, the steps that happen in between, and end with the updated version when the server is queried (web page is accessed)  
+
+![Workflow Diagram](images/Project5Diagram.PNG)
