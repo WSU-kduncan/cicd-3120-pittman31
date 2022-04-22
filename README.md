@@ -72,6 +72,8 @@ In this project I will be completing the following tasks:
     6. Enter Information for Username secret
     7. Repeat steps 3-4 for Password secret
 - Configure GitHub Workflow
+  - what does it do and when
+    - When a new release is created, the workflow pushes the changes made to the contatiner to DockerHUB
   - variables to change (repository, etc.)
     1. I clicked add file on https://github.com/WSU-kduncan/cicd-3120-pittman31 repository and created .github/workflow/github-actions-project5.yml
     2. I copied the contents of the template on https://docs.github.com/en/actions/guides/publishing-docker-images#publishing-images-to-docker-hub into the github-actions-project5.yml file
